@@ -1,0 +1,17 @@
+kind: pipeline
+type: docker
+name: default
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+
+steps:
+  - name: deploy
+    image: node:14.10.0
+    commands:
+      - npm i
+      - npm run build
+      - npm run deploy
