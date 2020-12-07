@@ -11,9 +11,11 @@ trigger:
 steps:
   - name: deploy
     image: node:14.10.0
+    environment:
+      DEPLOY_KEY:
+        from_secret: DEPLOY_KEY
     commands:
-      - which git
-      # - npm i
-      # - npm run build
-      # - ls -l .
-      # - npm run deploy
+      - npm i
+      - npm run build
+      - echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
+      - npm run deploy
