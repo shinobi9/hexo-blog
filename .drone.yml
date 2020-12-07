@@ -17,5 +17,6 @@ steps:
     commands:
       - npm i
       - npm run build
+      - mkdir -p ~/.ssh/
       - echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
       - npm run deploy
