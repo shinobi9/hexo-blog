@@ -12,7 +12,8 @@ steps:
   - name: deploy
     image: node:14.10.0
     commands:
-      - npm i
-      - npm run build
-      - ls -l .
+      - which git
+      # - npm i
+      # - npm run build
+      # - ls -l .
       # - npm run deploy
