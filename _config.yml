@@ -107,4 +107,4 @@ deploy:
   type: 'git'
   repo:
     github: 'git@github.com:shinobi9/shinobi9.github.io.git'
-  branch: 'main'
+  branch: 'master'
