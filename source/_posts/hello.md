@@ -6,7 +6,6 @@ tags: [misc,hello world]
 
 ## hello!
 
-hello!
 <!-- more -->
 这个博客由 github + drone 完成
 
