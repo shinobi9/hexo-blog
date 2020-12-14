@@ -9,7 +9,7 @@ tags: [misc,hello world]
 <!-- more -->
 这个博客由 github + drone 完成
 使用了两个仓库
-`github.com/shinobi9/hexo-blog`  `github.com/shinobi9/shinobi9.github.io`
+`github.com/shinobi9/hexo-blog(private)`  `github.com/shinobi9/shinobi9.github.io`
 
 `hexo-blog` 推送会用webhook trigger `drone.io` , 
 执行 `hexo deploy`,部署到 <https://shinobi9.github.io>, 
