@@ -785,7 +785,8 @@ about:
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:  # 打字机内容
-  avatar: https://cdn.jsdelivr.net/gh/shinobi9/cdn@main/blog/avatar/avatar.jpg
+  # avatar: https://cdn.jsdelivr.net/gh/shinobi9/cdn@main/blog/avatar/avatar.jpg
+  avatar: https://avatars.githubusercontent.com/shinobi9
   # https://cdn.jsdelivr.net/gh/shinobi9/hexo-blog/source/images/avatar.jpg
   name: "Shinobi9"
   introduce: "a marxism coder"
