@@ -391,7 +391,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: https://api.ixiaowai.cn/gqapi/gqapi.php
+  banner_img: https://cn.bing.com/th?id=OHR.TeaGardensMunnar_ZH-CN9587720369_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -467,7 +467,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: https://api.ixiaowai.cn/gqapi/gqapi.php
+  banner_img: https://cn.bing.com/th?id=OHR.TeaGardensMunnar_ZH-CN9587720369_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -642,8 +642,8 @@ disqus:
 # See: https://github.com/gitalk/gitalk#options
 gitalk:
   clientID: 64a2ca2e4ccc402d825d
-  clientSecret: d41757fb7f5033749d7a19ad778fb78e6490ac01
-  repo: shinobi9.github.io
+  clientSecret: 18c00deb7de3ffc68238a584c08ced9cdd8c7184
+  repo: hexo-blog
   owner: shinobi9
   admin: ['shinobi9']
   language: zh-CN
@@ -652,7 +652,7 @@ gitalk:
   pagerDirection: last
   distractionFreeMode: false
   createIssueManually: true
-
+  proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token
 # Valine
 # 基于 LeanCloud
 # Based on LeanCloud
@@ -726,7 +726,7 @@ twikoo:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: https://api.ixiaowai.cn/gqapi/gqapi.php
+  banner_img: https://cn.bing.com/th?id=OHR.TeaGardensMunnar_ZH-CN9587720369_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -738,7 +738,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: https://api.ixiaowai.cn/gqapi/gqapi.php
+  banner_img: https://cn.bing.com/th?id=OHR.TeaGardensMunnar_ZH-CN9587720369_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -763,7 +763,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: https://api.ixiaowai.cn/gqapi/gqapi.php
+  banner_img: https://cn.bing.com/th?id=OHR.TeaGardensMunnar_ZH-CN9587720369_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
   banner_img_height: 80
   banner_mask_alpha: 0.3
   subtitle:
@@ -781,7 +781,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: https://api.ixiaowai.cn/gqapi/gqapi.php
+  banner_img: https://cn.bing.com/th?id=OHR.TeaGardensMunnar_ZH-CN9587720369_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:  # 打字机内容
