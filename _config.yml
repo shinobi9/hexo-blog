@@ -105,7 +105,7 @@ theme: fluid
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: 'git'
-  repo: 'git@github.com:shinobi9/hexo-blog.git'
+  repo: 'https://github.com/shinobi9/hexo-blog.git'
   branch: 'gh-pages'
   token: $GITHUB_TOKEN
   name: $GIT_USER
