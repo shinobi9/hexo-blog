@@ -4,6 +4,29 @@
   
   
   <entry>
+    <title>pve lxc容器的NFS挂载问题</title>
+    <link href="/2023/05/09/pve-docker-nfs/"/>
+    <url>/2023/05/09/pve-docker-nfs/</url>
+    
+    <content type="html"><![CDATA[<p>折腾 <code>PVE</code> 的时候，遇到docker容器挂载nfs卷失败，具体表现是 <code>operation not commit</code>，单纯 <code>mount -vvv</code>出来的东西拿去搜不好使，关键词带搜索 <code>Proxmox</code> 之后 解决方案就多了，一种是在 <code>pve</code> 上先挂载 <code>nfs</code> 然后再 <code>bind mount</code> 到容器里去，具体参考 <a href="https://unix.stackexchange.com/questions/715278/mount-nfs-operation-not-permitted-in-proxmox-container">这里</a> , 另外一种简单的就是在创建容器的时候取消勾选 <code>非特权容器</code> ，这里会同时取消 <code>嵌套</code> ，再之后 用命令行打开 <code>嵌套</code> 即可。</p><p>这里折腾了老半天主要是因为我以为问题在<code>docker</code>上</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>docker</tag>
+      
+      <tag>nfs</tag>
+      
+      <tag>virtualization</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>steamdeck 挂载 NAS</title>
     <link href="/2023/03/29/steamdeck-with-nas/"/>
     <url>/2023/03/29/steamdeck-with-nas/</url>
