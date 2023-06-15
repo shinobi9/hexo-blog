@@ -108,5 +108,3 @@ deploy:
   repo: 'https://github.com/shinobi9/hexo-blog.git'
   branch: 'gh-pages'
   token: $GITHUB_TOKEN
-  name: $GIT_USER
-  email: $GIT_EMAIL
