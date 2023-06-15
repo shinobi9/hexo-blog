@@ -31,11 +31,8 @@ jobs:
           npm i -g yarn
           yarn install --frozen-lockfile
 
-      - name: Build site
-        run: yarn build
-
-      - name: Deploy with Hexo
-        run: |
-          git config --global user.name "${{ secrets.USER }}"
-          git config --global user.email "${{ secrets.EMAIL }}"
-          yarn deploy
+      - name: Deploy
+        id: deploy
+        uses: sma11black/hexo-action@v1.0.4
+        with:
+          deploy_key: ${{ secrets.DEPLOY_KEY }}
