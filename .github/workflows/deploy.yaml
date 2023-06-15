@@ -40,6 +40,7 @@ jobs:
         uses: sma11black/hexo-action@v1.0.4
         with:
           deploy_key: ${{ secrets.DEPLOY_KEY }}
+          branch: gh-pages
       - name: Get the output
         run: |
           echo "${{ steps.deploy.outputs.notify }}"
