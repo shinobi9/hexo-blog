@@ -36,8 +36,8 @@ jobs:
 
       - name: Deploy with Hexo
         env:
-          DEPLOY_BRANCH: gh-pages
+          # DEPLOY_BRANCH: gh-pages
           GIT_EMAIL: ${{ secrets.EMAIL }}
-          GIT_NAME: ${{ secrets.USER }}
+          GIT_USER: ${{ secrets.USER }}
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: yarn deploy
