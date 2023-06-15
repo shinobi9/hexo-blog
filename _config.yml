@@ -107,3 +107,4 @@ deploy:
   type: 'git'
   repo: 'git@github.com:shinobi9/hexo-blog.git'
   branch: 'gh-pages'
+  cname: 
