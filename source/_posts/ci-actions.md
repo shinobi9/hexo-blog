@@ -183,7 +183,7 @@ jobs:
           docker-compose restart web      
 ```
 
-我隐去了部分无关内容，可以看的出虽然看上去比起`Drone CI`来说没有那么简介，但是同为 Yaml，也说不上多复杂，
+我隐去了部分无关内容，可以看的出虽然看上去比起`Drone CI`来说没有那么简洁，但是同为 Yaml，也说不上多复杂，
 
 写过几个例子之后，感觉不如`Drone CI`。。。。简洁，但是一想到不仅可以从`github`上的 [market](https://github.com/marketplace?type=actions) 里~~~毛~~~别人的 actions。还可以直接拿repo来用。
 
