@@ -107,4 +107,4 @@ deploy:
   type: 'git'
   repo: 'https://github.com/shinobi9/hexo-blog.git'
   branch: 'gh-pages'
-  token: $GITHUB_TOKEN
+  token: ${{ secrets.ACCESS_TOKEN }}
