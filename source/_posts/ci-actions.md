@@ -138,7 +138,9 @@ services:
 
 ```yaml
 on:
-  push: [main]
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
