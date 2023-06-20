@@ -8,7 +8,7 @@
     <link href="/2023/06/19/github-codespaces/"/>
     <url>/2023/06/19/github-codespaces/</url>
     
-    <content type="html"><![CDATA[<p>使用 <code>github.dev</code> 开网页 <code>vscode</code> 查看代码，尤其是多文件跳跃地看，比起网页上点来点去可方便太多了。</p><p>而 <code>github</code> 推出的 <code>codespace</code> 功能提供了在浏览器编写，编译，运行功能，配合<code>github actions</code>，可以只用一个浏览器，很轻松地完成对 <code>hexo</code> 这类静态网站的迭代，因为只需要一个浏览器，手机，平板，甚至是电视机，都能为 <code>开发设备</code> 。</p><p>其实这种网页版的 <code>vscode</code> 有 <a href="https://github.com/coder/code-server">code server</a> 这个开源项目，国内阿里，腾讯云提供的在线编辑也基本是这种东西。不过这个功能因为内建在<code>github</code>，只要登录了<code>github</code>了，后续提交代码也不需要输密码或者提供<code>sshkey</code>了。</p><p>本次文章更新就是 <code>powered by codespace</code>。</p>]]></content>
+    <content type="html"><![CDATA[<p>使用 <code>github.dev</code> 开网页 <code>vscode</code> 查看代码，尤其是多文件跳跃地看，比起网页上点来点去可方便太多了。</p><p>而 <code>github</code> 推出的 <code>codespace</code> 功能提供了在浏览器编写，编译，运行功能，配合<code>github actions</code>，可以只用一个浏览器，很轻松地完成对 <code>hexo</code> 这类静态网站的迭代，因为只需要一个浏览器，手机，平板，甚至是电视机，都能为 <code>开发设备</code> 。</p><p>其实这种网页版的 <code>vscode</code> 有 <a href="https://github.com/coder/code-server">code server</a> 这个开源项目，国内阿里，腾讯云提供的在线编辑也基本是这种东西。不过这个功能因为内建在<code>github</code>，只要登录了<code>github</code>了，后续提交代码也不需要输密码或者提供<code>sshkey</code>了。虽说有120小时&#x2F;月的限制，对于轻度使用是完全够用的。</p><p>本次文章更新就是 <code>powered by codespace</code>。</p>]]></content>
     
     
     
