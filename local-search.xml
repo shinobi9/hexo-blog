@@ -25,6 +25,18 @@
     
     
     
+    <tags>
+      
+      <tag>ci</tag>
+      
+      <tag>gitea</tag>
+      
+      <tag>gitea actions</tag>
+      
+      <tag>drone</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -60,6 +72,16 @@
     <content type="html"><![CDATA[<h3 id="steamdeck-挂载-NAS"><a href="#steamdeck-挂载-NAS" class="headerlink" title="steamdeck 挂载 NAS"></a>steamdeck 挂载 NAS</h3><p>先安装nfs依赖,需要先关闭steamos的读写保护,装完了再开启</p><figure class="highlight shell"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><pre><code class="hljs shell">sudo pacman -Syu<br>sudo steamos-readonly disable<br>sudo pacman -S sshfs<br>sudo pacman-key --init<br>sudo pacman-key --populate<br>sudo pacman -S sshfs<br>sudo pacman -S nfs-utils<br>sudo steamos-readonly enable<br></code></pre></td></tr></table></figure><p>然后再修改<code>/etc/fstab</code>,添加路径映射</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta"># </span><span class="language-bash">Static information about the filesystems.</span><br><span class="hljs-meta"># </span><span class="language-bash">See fstab(5) <span class="hljs-keyword">for</span> details.</span><br><span class="hljs-meta"></span><br><span class="hljs-meta"># </span><span class="language-bash">&lt;file system&gt; &lt;<span class="hljs-built_in">dir</span>&gt; &lt;<span class="hljs-built_in">type</span>&gt; &lt;options&gt; &lt;dump&gt; &lt;pass&gt;</span><br><span class="hljs-meta"># </span><span class="language-bash">SteamOS partitions</span><br><span class="hljs-meta">#</span><span class="language-bash">/dev/disk/by-partsets/self/rootfs /       ext4    defaults                0       1</span><br><span class="hljs-meta">#</span><span class="language-bash">/dev/disk/by-partsets/self/var    /var    ext4    defaults                0       2</span><br>/dev/disk/by-partsets/self/efi    /efi                                  vfat    defaults,nofail,umask=0077,x-systemd.automount,x-systemd.idle-timeout=1min 0       2<br>/dev/disk/by-partsets/shared/esp  /esp                                  vfat    defaults,nofail,umask=0077,x-systemd.automount,x-systemd.idle-timeout=1min 0       2<br>/dev/disk/by-partsets/shared/home /home                                 ext4    defaults,nofail,x-systemd.growfs 0       2<br>&lt;你的NAS IP&gt;:&lt;你的NAS 路径&gt;         &lt;映射到steamdeck的路径,我的是/run/media/nas&gt;  nfs     defaults,soft,timeo=900,x-systemd.automount,vers=4.1,_netdev 0 0<br></code></pre></td></tr></table></figure><p>最后</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo mount -a<br></code></pre></td></tr></table></figure><p>一般开机有网络会自动连上，没有网络再输入一遍<code>sudo mount -a</code> 即可。每次更新<code>steamos</code> 可能会失效，需要重新安装依赖，具体关注 <a href="https://github.com/ValveSoftware/SteamOS/issues/963">963</a></p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>nfs</tag>
+      
+      <tag>steamdeck</tag>
+      
+      <tag>nas</tag>
+      
+    </tags>
     
   </entry>
   
