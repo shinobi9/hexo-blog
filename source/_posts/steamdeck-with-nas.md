@@ -1,7 +1,7 @@
 ---
 title: steamdeck 挂载 NAS
 date: 2023-03-29 19:21:18
-tags:
+tags: [nfs,steamdeck,nas]
 ---
 ### steamdeck 挂载 NAS 
 
