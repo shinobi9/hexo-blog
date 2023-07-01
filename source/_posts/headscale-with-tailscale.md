@@ -21,6 +21,7 @@ tags: [headscale,tailscale,vpn]
 本地：
 
 `headscale-ui/docker-compose.yml`
+
 ```
 version: '3'
 services:
@@ -37,7 +38,8 @@ services:
       - 3000:80
 ```
 
-`nginx/default.conf` 
+`nginx/default.conf`
+
 ```
 server {
     listen       80;
@@ -57,6 +59,7 @@ server {
 服务器：
 
 `headscale/docker-compose.yml`
+
 ```
 version: '3'
 services:
@@ -73,6 +76,7 @@ services:
 ```
 
 `headscale/config.yaml`
+
 ```
 server_url: http://<服务器ip>:5488
 listen_addr: 0.0.0.0:5488
