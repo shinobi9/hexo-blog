@@ -1,7 +1,7 @@
 ---
 title: 从Drone 迁移到 Gitea Actions
 date: 2023-06-15 14:59:34
-tags: [ci,gitea,gitea actions,drone]
+tags: [ci,gitea,gitea actions,drone,jenkins,github,github actions,gitlab,gitlab ci]
 ---
 
 先来说说代码托管服务器的一般问题和DevOps问题：

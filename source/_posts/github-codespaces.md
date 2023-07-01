@@ -1,7 +1,7 @@
 ---
 title: Github Codespaces 使用
 date: 2023-06-20 01:19:49
-tags:
+tags: [github,vscode]
 ---
 
 使用 `github.dev` 开网页 `vscode` 查看代码，尤其是多文件跳跃地看，比起网页上点来点去可方便太多了。
