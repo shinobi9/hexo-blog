@@ -35,6 +35,14 @@
     
     
     
+    <tags>
+      
+      <tag>github</tag>
+      
+      <tag>vscode</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -57,6 +65,16 @@
       <tag>gitea actions</tag>
       
       <tag>drone</tag>
+      
+      <tag>jenkins</tag>
+      
+      <tag>github</tag>
+      
+      <tag>github actions</tag>
+      
+      <tag>gitlab</tag>
+      
+      <tag>gitlab ci</tag>
       
     </tags>
     
