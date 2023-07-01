@@ -35,7 +35,8 @@ services:
       - ./default.conf:/etc/nginx/conf.d/default.conf
     ports:
       - 3000:80
-```     
+```
+
 `nginx/default.conf` 
 ```
 server {
@@ -70,8 +71,8 @@ services:
     command: headscale serve
     restart: unless-stopped
 ```
-`headscale/config.yaml`
 
+`headscale/config.yaml`
 ```
 server_url: http://<服务器ip>:5488
 listen_addr: 0.0.0.0:5488
