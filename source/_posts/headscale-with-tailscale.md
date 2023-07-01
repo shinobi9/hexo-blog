@@ -10,7 +10,11 @@ tags: [headscale,tailscale,vpn]
 
 不知道什么时候开始，经常出现无法握手的情况，添加了自己搭的 `moon` 服务器也是好一阵坏一阵，所以试着换到 `tailscale`。
 
-`tailscale` 是一个客户端开源，服务端不开源的软件，而 `headscale` 是一个欧洲航天局的开发者开发的一款开源的 `tailscale` 服务端。
+`tailscale` 是一个客户端开源，服务端不开源的软件，
+
+`headscale` 是一个欧洲航天局的开发者开发的一款开源的 `tailscale` 服务端，
+
+`headscale-ui` 是一个纯静态的控制 `headscale` 的前端项目。
 
 下面是具体的配置
 
@@ -33,7 +37,6 @@ services:
       - 3000:80
 ```     
 `nginx/default.conf` 
-
 ```
 server {
     listen       80;
