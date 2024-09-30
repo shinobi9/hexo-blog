@@ -37,7 +37,8 @@ jobs:
 
       - name: Deploy
         id: deploy
-        uses: sma11black/hexo-action@v1.0.4
+        # uses: sma11black/hexo-action@v1.0.4
+        uses: scutLMG/hexo-action@v0.3.0
         with:
           deploy_key: ${{ secrets.DEPLOY_KEY }}
           branch: gh-pages
