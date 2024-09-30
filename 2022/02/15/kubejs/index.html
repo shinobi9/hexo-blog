@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/shinobi9/cdn@main/blog/favicon/shinobi9.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="shinobi9">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="整合包利器: kubejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kubejs">
+<meta property="og:url" content="https://shinobi9.github.io/2022/02/15/kubejs/index.html">
+<meta property="og:site_name" content="Shinobi9&#39;s blog">
+<meta property="og:description" content="整合包利器: kubejs">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-15T12:13:31.000Z">
+<meta property="article:modified_time" content="2023-03-29T11:18:58.185Z">
+<meta property="article:author" content="shinobi9">
+<meta property="article:tag" content="game">
+<meta property="article:tag" content="minecraft">
+<meta property="article:tag" content="kubejs">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>kubejs - Shinobi9&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"shinobi9.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Shinobi9&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" 
+         style="background: url('https://cn.bing.com/th?id=OHR.TeaGardensMunnar_ZH-CN9587720369_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="kubejs">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-15 20:13" pubdate>
+        2022年2月15日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      20 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">kubejs</h1>
+            
+            <div class="markdown-body">
+              <h2 id="整合包利器-kubejs"><a href="#整合包利器-kubejs" class="headerlink" title="整合包利器: kubejs"></a>整合包利器: kubejs</h2><span id="more"></span>
+<p>最近拿家里的闲置电脑当服务器开了个minecraft服,在机械飞升整合包里发现了这个模组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></div></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// world/kubejs/server_scripts/scripts.js</span><br><span class="hljs-comment">// 修改配方需要 游戏内的 /reload 会卡ui线程</span><br><br><span class="hljs-comment">//简化代码</span><br><span class="hljs-keyword">let</span> MOD = <span class="hljs-function">(<span class="hljs-params">domain, id, x</span>) =&gt;</span> (x ? <span class="hljs-string">`<span class="hljs-subst">$&#123;x&#125;</span>x `</span> : <span class="hljs-string">&quot;&quot;</span>) + (id.startsWith(<span class="hljs-string">&#x27;#&#x27;</span>) ? <span class="hljs-string">&#x27;#&#x27;</span> : <span class="hljs-string">&quot;&quot;</span>) + domain + <span class="hljs-string">&quot;:&quot;</span> + id.replace(<span class="hljs-string">&#x27;#&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-keyword">let</span> AE2 = <span class="hljs-function">(<span class="hljs-params">id, x</span>) =&gt;</span> MOD(<span class="hljs-string">&quot;appliedenergistics2&quot;</span>, id, x)<br><span class="hljs-keyword">let</span> TE = <span class="hljs-function">(<span class="hljs-params">id, x</span>) =&gt;</span> MOD(<span class="hljs-string">&quot;thermal&quot;</span>, id, x)<br><span class="hljs-keyword">let</span> AP = <span class="hljs-function">(<span class="hljs-params">id, x</span>) =&gt;</span> MOD(<span class="hljs-string">&quot;architects_palette&quot;</span>, id, x)<br><span class="hljs-keyword">let</span> FD = <span class="hljs-function">(<span class="hljs-params">id, x</span>) =&gt;</span> MOD(<span class="hljs-string">&quot;farmersdelight&quot;</span>, id, x)<br><span class="hljs-keyword">let</span> MC = <span class="hljs-function">(<span class="hljs-params">id, x</span>) =&gt;</span> MOD(<span class="hljs-string">&quot;minecraft&quot;</span>, id, x)<br><span class="hljs-keyword">let</span> CH = <span class="hljs-function">(<span class="hljs-params">id, x</span>) =&gt;</span> MOD(<span class="hljs-string">&quot;chisel&quot;</span>, id, x)<br><br><span class="hljs-comment">//移除匠魂 的弹簧鞋</span><br>onEvent(<span class="hljs-string">&#x27;recipes&#x27;</span>, <span class="hljs-function"><span class="hljs-params">event</span> =&gt;</span> &#123;<br>    log.push(<span class="hljs-string">&#x27;Registering Recipes&#x27;</span>)<br>    event.remove(&#123;<span class="hljs-attr">output</span>: <span class="hljs-string">&#x27;tconstruct:earth_slime_sling&#x27;</span>&#125;)<br>    event.remove(&#123;<span class="hljs-attr">output</span>: <span class="hljs-string">&#x27;tconstruct:sky_slime_sling&#x27;</span>&#125;)<br>    event.remove(&#123;<span class="hljs-attr">output</span>: <span class="hljs-string">&#x27;tconstruct:ichor_slime_sling&#x27;</span>&#125;)<br>    event.remove(&#123;<span class="hljs-attr">output</span>: <span class="hljs-string">&#x27;tconstruct:ender_slime_sling&#x27;</span>&#125;)<br>&#125;)<br><br><span class="hljs-comment">// oak_log          橡木</span><br><span class="hljs-comment">// stripped_oak_log 去皮橡木</span><br><span class="hljs-comment">//  CR =&gt; create:   删除机械动力提供的橡木=&gt;木板的配方,并且提供一个 获取农夫乐事的树皮的 合成(橡木 =&gt; 去皮橡木 + 树皮)</span><br><span class="hljs-comment">// 需要 kubejs create 支持( kubejs 扩展</span><br>onEvent(<span class="hljs-string">&#x27;recipes&#x27;</span>, <span class="hljs-function"><span class="hljs-params">event</span> =&gt;</span> &#123;<br>    event.remove(&#123;<span class="hljs-attr">id</span>: CR(<span class="hljs-string">&quot;cutting/oak_log&quot;</span>)&#125;)<br>    event.recipes.createCutting([MC(<span class="hljs-string">&quot;stripped_oak_log&quot;</span>), FD(<span class="hljs-string">&quot;tree_bark&quot;</span>)], MC(<span class="hljs-string">&quot;oak_log&quot;</span>)).processingTime(<span class="hljs-number">50</span>)<br>&#125;)<br><br>onEvent(<span class="hljs-string">&#x27;recipes&#x27;</span>, <span class="hljs-function"><span class="hljs-params">event</span> =&gt;</span> &#123;<br><span class="hljs-comment">// 移除凿子的两个合成</span><br>    event.remove(&#123;<span class="hljs-attr">id</span>: CH(<span class="hljs-string">&quot;iron_chisel&quot;</span>)&#125;)<br>    event.remove(&#123;<span class="hljs-attr">id</span>: CH(<span class="hljs-string">&quot;diamond_chisel&quot;</span>)&#125;)<br><br><span class="hljs-comment">// 为其添加不一样的合成（有序），这一步是因为他和农夫乐事的小刀的合成冲突</span><br>    event.shaped(CH(<span class="hljs-string">&quot;iron_chisel&quot;</span>), [<br>        <span class="hljs-string">&#x27;R &#x27;</span>,<br>        <span class="hljs-string">&#x27; M&#x27;</span>,<br>    ], &#123;<br>        R: F(<span class="hljs-string">&#x27;#rods&#x27;</span>),<br>        M: MC(<span class="hljs-string">&#x27;iron_ingot&#x27;</span>)<br>    &#125;)<br><br>    event.shaped(CH(<span class="hljs-string">&quot;diamond_chisel&quot;</span>), [<br>        <span class="hljs-string">&#x27;R &#x27;</span>,<br>        <span class="hljs-string">&#x27; M&#x27;</span>,<br>    ], &#123;<br>        R: F(<span class="hljs-string">&#x27;#rods&#x27;</span>),<br>        M: MC(<span class="hljs-string">&#x27;diamond&#x27;</span>)<br>    &#125;)<br>&#125;)<br><br><br><span class="hljs-comment">// 修改聊天事件 不需要/reload  使用 /kubejs reload server_scripts... 就可，不会卡ui线程</span><br><span class="hljs-comment">// 指令 </span><br>onEvent(<span class="hljs-string">&#x27;player.chat&#x27;</span>, <span class="hljs-function"><span class="hljs-params">event</span> =&gt;</span> &#123;<br>    <span class="hljs-comment">// Check if message equals creeper, ignoring case</span><br>    <span class="hljs-keyword">if</span> (event.message.startsWith(<span class="hljs-string">&#x27;查询太行山积雪深度&#x27;</span>)) &#123;<br>        event.player.tell(<span class="hljs-string">&#x27;66.57cm&#x27;</span>)<br>        event.cancel() <span class="hljs-comment">//隐藏指令</span><br>    &#125;<br>&#125;)<br><br></code></pre></td></tr></table></figure>
+
+<p>查看游戏内的配方：</p>
+<p>可以先在游戏内 <code>kubejs export ...</code> 然后去 <code>world/kubejs/exported</code> 查看导出文件</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/game/">game</a>
+                    
+                      <a class="hover-with-bg" href="/tags/minecraft/">minecraft</a>
+                    
+                      <a class="hover-with-bg" href="/tags/kubejs/">kubejs</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/03/29/steamdeck-with-nas/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">steamdeck 挂载 NAS</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/12/07/hello/">
+                        <span class="hidden-mobile">hello</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"64a2ca2e4ccc402d825d","clientSecret":"18c00deb7de3ffc68238a584c08ced9cdd8c7184","repo":"hexo-blog","owner":"shinobi9","admin":["shinobi9"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '8188c9e7126525d61720bf8247808945'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
