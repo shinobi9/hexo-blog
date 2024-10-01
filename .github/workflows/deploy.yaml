@@ -35,13 +35,20 @@ jobs:
         run: |
           yarn install --frozen-lockfile
 
-      - name: Deploy
-        id: deploy
-        # uses: sma11black/hexo-action@v1.0.4
-        uses: scutLMG/hexo-action@v0.3.0
+      # - name: Deploy
+      #   id: deploy
+      #   # uses: sma11black/hexo-action@v1.0.4
+      #   # uses: scutLMG/hexo-action@v0.3.0
+      #   with:
+      #     deploy_key: ${{ secrets.DEPLOY_KEY }}
+      #     branch: gh-pages
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.6.8
         with:
-          deploy_key: ${{ secrets.DEPLOY_KEY }}
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
           branch: gh-pages
+          folder: public
+
       - name: Get the output
         run: |
           echo "${{ steps.deploy.outputs.notify }}"
